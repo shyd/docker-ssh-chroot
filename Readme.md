@@ -13,12 +13,10 @@ bash sh, ls, cp, mv, mkdir, touch, vi, cat, sed, date, bunzip2, bzip2, chmod, eg
 ## Install
 
 ```
-$ git clone https://github.com/Soletic/hosting-docker-ubuntu.git ./ubuntu
-$ git clone https://github.com/Soletic/hosting-docker-sshd.git ./sshd
-$ git clone https://github.com/Soletic/hosting-docker-ssh-chroot.git ./ssh-chroot
-$ docker build -t soletic/ubuntu ./ubuntu
-$ docker build -t soletic/sshd ./sshd
-$ docker build -t soletic/ssh-chroot ./ssh-chroot
+$ git clone https://github.com/shyd/docker-sshd.git ./sshd
+$ git clone https://github.com/shyd/docker-ssh-chroot.git ./ssh-chroot
+$ docker build -t shyd/sshd ./sshd
+$ docker build -t shyd/ssh-chroot ./ssh-chroot
 ```
 
 ## Run the container
@@ -26,7 +24,7 @@ $ docker build -t soletic/ssh-chroot ./ssh-chroot
 Run the image as a container
 
 ```
-$ docker run -d -p 2222:22 -v /path/host:/home --name sshd --privileged soletic/ssh-chroot
+$ docker run -d -p 2222:22 -v /path/host:/home --name sshd --privileged shyd/ssh-chroot
 ```
 
 * option --privileged required to give mount permissions inside the container ([see here >](https://github.com/docker/docker/issues/5254))

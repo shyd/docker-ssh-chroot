@@ -1,5 +1,4 @@
-FROM soletic/sshd
-MAINTAINER Sol&TIC <serveur@soletic.org>
+FROM shyd/sshd
 
 ENV CHROOT_INSTALL_DIR /chroot
 # Path to directory where user directories are stored
